@@ -1,10 +1,14 @@
+// DSL plugin for android
 apply plugin: 'com.android.application'
 
+
+// DSL plugin for kotlin
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    // The target SDK version for the build
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.gooner10.android_developer_fundamentals"
@@ -14,15 +18,22 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    // Controls how app is built and packaged
     buildTypes {
+        // One of the options, we can have numerous, common another example is debug
         release {
+            // Code shrinker for release versions
             minifyEnabled false
+
+            // User ProGuard, a Java optimzer
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
+    // Local binary dependency. Include any JAR file inside app/libs
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
