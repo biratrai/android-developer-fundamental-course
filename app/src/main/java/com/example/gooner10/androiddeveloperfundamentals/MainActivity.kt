@@ -3,7 +3,7 @@ package com.example.gooner10.androiddeveloperfundamentals
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.gooner10.android_developer_fundamentals.R
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,10 +12,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    /**
+     * When the button is clicked, it shows toast
+     */
     fun showToast(view: View) {
-
+        Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Increases the count in text, when the button is clicked
+     */
     fun countUp(view: View) {
 
     }

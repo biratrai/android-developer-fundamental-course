@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gooner10.android_developer_fundamentals">
+    package="com.example.gooner10.androiddeveloperfundamentals">
 
     <application
         android:allowBackup="true"

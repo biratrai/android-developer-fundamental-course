@@ -1,4 +1,4 @@
-package com.example.gooner10.android_developer_fundamentals
+package com.example.gooner10.androiddeveloperfundamentals
 
 import org.junit.Test
 
