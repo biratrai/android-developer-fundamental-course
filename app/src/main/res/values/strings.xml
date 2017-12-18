@@ -29,4 +29,13 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
 </string>
     <string name="toast_activity">Toast Activity</string>
     <string name="keyboard_activity">Keyboard Activity</string>
+    <string name="enter_a_message">Enter a message</string>
+    <string name="show">show</string>
+
+    <string-array name="labels_array">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
 </resources>
