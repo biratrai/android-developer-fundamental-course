@@ -1,5 +1,6 @@
 package com.example.gooner10.androiddeveloperfundamentals
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -17,7 +18,9 @@ class MainActivity : AppCompatActivity() {
      * When the button is clicked, it shows toast
      */
     fun showToast(view: View) {
-        Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, ScrollActivity::class.java)
+        startActivity(intent)
     }
 
     /**
