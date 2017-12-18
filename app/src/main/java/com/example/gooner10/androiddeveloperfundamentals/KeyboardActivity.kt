@@ -1,7 +1,8 @@
 package com.example.gooner10.androiddeveloperfundamentals
 
-import android.support.v7.app.AppCompatActivity
+import android.app.DialogFragment
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
@@ -50,5 +51,10 @@ class KeyboardActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         } else {
             Toast.makeText(this, phoneNumber, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun showDatePicker(view: View) {
+        val datepicker: DialogFragment = DatePickerFragment()
+        datepicker.show(fragmentManager, getString(R.string.date_picker))
     }
 }

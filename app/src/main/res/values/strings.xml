@@ -38,4 +38,8 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
         <item>Mobile</item>
         <item>Other</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date_picker">datePicker</string>
 </resources>

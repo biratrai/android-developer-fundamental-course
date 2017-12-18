@@ -30,10 +30,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
-        android:text="show Phone"
         android:onClick="showPhone"
+        android:text="show Phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/datePickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:onClick="showDatePicker"
+        android:text="show datepicker"
+        app:layout_constraintTop_toBottomOf="@+id/userPhoneEditText" />
 
     <EditText
         android:id="@+id/userMessageEditText"
