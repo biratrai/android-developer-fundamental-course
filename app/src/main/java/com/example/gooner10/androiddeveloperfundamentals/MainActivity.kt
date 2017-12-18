@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (savedInstanceState != null) {
+            toastButton.text = savedInstanceState.getString("buttonText")
+        }
     }
 
     /**
@@ -46,5 +49,10 @@ class MainActivity : AppCompatActivity() {
                 toastButton.text = data.getStringExtra(REPLY)
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.putString("buttonText", toastButton.text.toString())
+        super.onSaveInstanceState(outState)
     }
 }
