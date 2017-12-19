@@ -25,7 +25,8 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".ToastActivity" />
-        <activity android:name=".KeyboardActivity"></activity>
+        <activity android:name=".KeyboardActivity" />
+        <activity android:name=".RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

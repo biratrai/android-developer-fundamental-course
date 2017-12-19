@@ -19,4 +19,8 @@ class MainActivity : AppCompatActivity() {
     fun launchToast(view: View) {
         startActivity(Intent(this, ToastActivity::class.java))
     }
+
+    fun launchRecyclerView(view: View) {
+        startActivity(Intent(this, RecyclerViewActivity::class.java))
+    }
 }
