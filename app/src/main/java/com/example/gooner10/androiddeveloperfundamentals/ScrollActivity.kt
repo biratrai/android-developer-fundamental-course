@@ -2,15 +2,17 @@ package com.example.gooner10.androiddeveloperfundamentals
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.MenuItem
 
-const val REPLY = "Reply"
-private val TAG = ScrollActivity::class.java.simpleName
-
 class ScrollActivity : AppCompatActivity() {
+    companion object {
+        const val REPLY = "Reply"
+        private val TAG = ScrollActivity::class.java.simpleName
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scroll)

@@ -2,18 +2,20 @@ package com.example.gooner10.androiddeveloperfundamentals
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.gooner10.androiddeveloperfundamentals.ScrollActivity.Companion.REPLY
 import kotlinx.android.synthetic.main.activity_toast.*
 
-
-const val TEXT_REQUEST = 1
-private val TAG = MainActivity::class.java.simpleName
-
 class ToastActivity : AppCompatActivity() {
+    companion object {
+        const val TEXT_REQUEST = 1
+        private val TAG = MainActivity::class.java.simpleName
+    }
+
     private var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,12 +45,12 @@ class ToastActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Log.d(com.example.gooner10.androiddeveloperfundamentals.TAG, "requestCode " + requestCode)
-        Log.d(com.example.gooner10.androiddeveloperfundamentals.TAG, "resultCode " + resultCode)
-        Log.d(com.example.gooner10.androiddeveloperfundamentals.TAG, "intent " + data)
+        Log.d(TAG, "requestCode " + requestCode)
+        Log.d(TAG, "resultCode " + resultCode)
+        Log.d(TAG, "intent " + data)
         if (requestCode == TEXT_REQUEST && resultCode == Activity.RESULT_OK) {
             if (data != null) {
-                Log.d(com.example.gooner10.androiddeveloperfundamentals.TAG, "intent " + data.getStringExtra(REPLY))
+                Log.d(TAG, "intent " + data.getStringExtra(REPLY))
                 toastButton.text = data.getStringExtra(REPLY)
             }
         }
