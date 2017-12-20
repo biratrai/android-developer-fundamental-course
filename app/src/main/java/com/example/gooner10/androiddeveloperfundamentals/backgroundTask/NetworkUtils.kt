@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.backgroundTask
 
 
 import android.net.Uri
@@ -30,7 +30,7 @@ import java.net.URL
  */
 internal object NetworkUtils {
 
-    private val BOOK_BASE_URL = "https://www.googleapis.com/books/v1/volumes?"
+    private val BOOK_BASE_URL = "https://www.googleapis.com/books/"
     private val QUERY_PARAM = "q" // Parameter for the search string.
     private val MAX_RESULTS = "maxResults" // Parameter that limits search results.
     private val PRINT_TYPE = "printType" // Parameter to filter by print type.
@@ -112,8 +112,9 @@ internal object NetworkUtils {
 
             }
         }
-
+        Log.d(LOG_TAG, bookJSONString)
         // Return the raw response.
         return bookJSONString
     }
+
 }

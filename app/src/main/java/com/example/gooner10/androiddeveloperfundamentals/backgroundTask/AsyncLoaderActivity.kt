@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.backgroundTask
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -9,10 +9,11 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.example.gooner10.androiddeveloperfundamentals.R
+import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.model.Books
 import kotlinx.android.synthetic.main.activity_async_loader.*
-import org.json.JSONObject
 
-class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<String> {
+class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Books> {
     // Class name for Log tag.
     private val LOG_TAG = AsyncLoaderActivity::class.java.simpleName
 
@@ -74,7 +75,7 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
      * @param args The bundle that contains the search parameter.
      * @return Returns a new BookLoader containing the search term.
      */
-    override fun onCreateLoader(id: Int, args: Bundle): Loader<String> {
+    override fun onCreateLoader(id: Int, args: Bundle): Loader<Books> {
         return BookLoader(this, args.getString("queryString")!!)
     }
 
@@ -85,47 +86,53 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
      * @param loader The loader that has finished.
      * @param data The JSON response from the Books API.
      */
-    override fun onLoadFinished(loader: Loader<String>, data: String) {
+    override fun onLoadFinished(loader: Loader<Books>?, books: Books?) {
         try {
-            // Convert the response into a JSON object.
-            val jsonObject = JSONObject(data)
-            // Get the JSONArray of book items.
-            val itemsArray = jsonObject.getJSONArray("items")
-
-            // Initialize iterator and results fields.
-            var i = 0
-            var title: String? = null
-            var authors: String? = null
-
-            // Look for results in the items array, exiting when both the title and author
-            // are found or when all items have been checked.
-            while (i < itemsArray.length() || authors == null && title == null) {
-                // Get the current item information.
-                val book = itemsArray.getJSONObject(i)
-                val volumeInfo = book.getJSONObject("volumeInfo")
-
-                // Try to get the author and title from the current item,
-                // catch if either field is empty and move on.
-                try {
-                    title = volumeInfo.getString("title")
-                    authors = volumeInfo.getString("authors")
-                } catch (e: Exception) {
-                    Log.e(LOG_TAG, e.toString())
-                }
-
-                // Move to the next item.
-                i++
-            }
+            Log.d(LOG_TAG, "books: " + books)
+//            // Convert the response into a JSON object.
+//            val jsonObject = JSONObject(data)
+//            // Get the JSONArray of book items.
+//            val itemsArray = jsonObject.getJSONArray("items")
+//
+//            // Initialize iterator and results fields.
+//            var i = 0
+//            var title: String? = null
+//            var authors: String? = null
+//
+//            // Look for results in the items array, exiting when both the title and author
+//            // are found or when all items have been checked.
+//            while (i < itemsArray.length() || authors == null && title == null) {
+//                // Get the current item information.
+//                val book = itemsArray.getJSONObject(i)
+//                val volumeInfo = book.getJSONObject("volumeInfo")
+//
+//                // Try to get the author and title from the current item,
+//                // catch if either field is empty and move on.
+//                try {
+//                    title = volumeInfo.getString("title")
+//                    authors = volumeInfo.getString("authors")
+//                } catch (e: Exception) {
+//                    Log.e(LOG_TAG, e.toString())
+//                }
+//
+//                // Move to the next item.
+//                i++
+//            }
+//            val gson = Gson()
+//            val books: Books = gson.fromJson(data, Books::class.java)
 
             // If both are found, display the result.
-            if (title != null && authors != null) {
-                titleText.text = title
-                authorText.text = authors
-                bookInput.setText("")
-            } else {
-                // If none are found, update the UI to show failed results.
-                titleText!!.setText(R.string.no_results)
-                authorText!!.text = ""
+            if (books != null) {
+                Log.d(LOG_TAG,"books.items: "+ books.items)
+                if (books.items?.get(0)?.volumeInfo!!.title != null && books.items?.get(0)?.volumeInfo!!.authors != null) {
+                    titleText.text = books.items?.get(0)?.volumeInfo!!.title
+                    authorText.text = books.items?.get(0)?.volumeInfo!!.authors?.get(0) ?: "No author"
+                    bookInput.setText("")
+                } else {
+                    // If none are found, update the UI to show failed results.
+                    titleText!!.setText(R.string.no_results)
+                    authorText!!.text = ""
+                }
             }
 
         } catch (e: Exception) {
@@ -143,5 +150,5 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
      *
      * @param loader The loader that was reset.
      */
-    override fun onLoaderReset(loader: Loader<String>) {}
+    override fun onLoaderReset(loader: Loader<Books>) {}
 }
