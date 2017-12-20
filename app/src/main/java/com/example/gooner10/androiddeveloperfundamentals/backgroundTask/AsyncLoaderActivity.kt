@@ -89,41 +89,10 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<B
     override fun onLoadFinished(loader: Loader<Books>?, books: Books?) {
         try {
             Log.d(LOG_TAG, "books: " + books)
-//            // Convert the response into a JSON object.
-//            val jsonObject = JSONObject(data)
-//            // Get the JSONArray of book items.
-//            val itemsArray = jsonObject.getJSONArray("items")
-//
-//            // Initialize iterator and results fields.
-//            var i = 0
-//            var title: String? = null
-//            var authors: String? = null
-//
-//            // Look for results in the items array, exiting when both the title and author
-//            // are found or when all items have been checked.
-//            while (i < itemsArray.length() || authors == null && title == null) {
-//                // Get the current item information.
-//                val book = itemsArray.getJSONObject(i)
-//                val volumeInfo = book.getJSONObject("volumeInfo")
-//
-//                // Try to get the author and title from the current item,
-//                // catch if either field is empty and move on.
-//                try {
-//                    title = volumeInfo.getString("title")
-//                    authors = volumeInfo.getString("authors")
-//                } catch (e: Exception) {
-//                    Log.e(LOG_TAG, e.toString())
-//                }
-//
-//                // Move to the next item.
-//                i++
-//            }
-//            val gson = Gson()
-//            val books: Books = gson.fromJson(data, Books::class.java)
 
             // If both are found, display the result.
             if (books != null) {
-                Log.d(LOG_TAG,"books.items: "+ books.items)
+                Log.d(LOG_TAG, "books.items: " + books.items)
                 if (books.items?.get(0)?.volumeInfo!!.title != null && books.items?.get(0)?.volumeInfo!!.authors != null) {
                     titleText.text = books.items?.get(0)?.volumeInfo!!.title
                     authorText.text = books.items?.get(0)?.volumeInfo!!.authors?.get(0) ?: "No author"
