@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.support.v4.app.LoaderManager
 import android.support.v4.content.Loader
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import kotlinx.android.synthetic.main.activity_async_loader.*
 import org.json.JSONObject
 
 class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<String> {
+    // Class name for Log tag.
+    private val LOG_TAG = AsyncLoaderActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,7 +110,7 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
                     title = volumeInfo.getString("title")
                     authors = volumeInfo.getString("authors")
                 } catch (e: Exception) {
-                    e.printStackTrace()
+                    Log.e(LOG_TAG, e.toString())
                 }
 
                 // Move to the next item.
@@ -129,7 +132,7 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
             // If onPostExecute does not receive a proper JSON string, update the UI to show failed results.
             titleText.setText(R.string.no_results)
             authorText.text = ""
-            e.printStackTrace()
+            Log.e(LOG_TAG, e.toString())
         }
 
 

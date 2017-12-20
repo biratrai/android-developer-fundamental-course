@@ -17,6 +17,7 @@ package com.example.gooner10.androiddeveloperfundamentals
 
 
 import android.net.Uri
+import android.util.Log
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -95,7 +96,7 @@ internal object NetworkUtils {
 
             // Catch errors.
         } catch (e: IOException) {
-            e.printStackTrace()
+            Log.e(LOG_TAG, e.toString())
 
             // Close the connections.
         } finally {
@@ -106,7 +107,7 @@ internal object NetworkUtils {
                 try {
                     reader.close()
                 } catch (e: IOException) {
-                    e.printStackTrace()
+                    Log.e(LOG_TAG, e.toString())
                 }
 
             }
