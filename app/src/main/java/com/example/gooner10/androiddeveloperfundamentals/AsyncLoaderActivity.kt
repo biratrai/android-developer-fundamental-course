@@ -116,9 +116,9 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
 
             // If both are found, display the result.
             if (title != null && authors != null) {
-                titleText!!.text = title
-                authorText!!.text = authors
-                bookInput!!.setText("")
+                titleText.text = title
+                authorText.text = authors
+                bookInput.setText("")
             } else {
                 // If none are found, update the UI to show failed results.
                 titleText!!.setText(R.string.no_results)
@@ -127,8 +127,8 @@ class AsyncLoaderActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<S
 
         } catch (e: Exception) {
             // If onPostExecute does not receive a proper JSON string, update the UI to show failed results.
-            titleText!!.setText(R.string.no_results)
-            authorText!!.text = ""
+            titleText.setText(R.string.no_results)
+            authorText.text = ""
             e.printStackTrace()
         }
 
