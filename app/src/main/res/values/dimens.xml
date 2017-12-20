@@ -2,4 +2,7 @@
 <resources>
     <dimen name="count_textView_size">160sp</dimen>
     <dimen name="padding_regular">10dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>
