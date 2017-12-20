@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals.model
+package com.example.gooner10.androiddeveloperfundamentals.backgroundTask.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -17,7 +17,7 @@ class VolumeInfo {
     @SerializedName("contentVersion")
     var contentVersion: String? = null
     @SerializedName("imageLinks")
-    var imageLinks: com.example.gooner10.androiddeveloperfundamentals.model.ImageLinks? = null
+    var imageLinks: ImageLinks? = null
     @SerializedName("industryIdentifiers")
     var industryIdentifiers: List<IndustryIdentifier>? = null
     @SerializedName("infoLink")
@@ -37,7 +37,7 @@ class VolumeInfo {
     @SerializedName("ratingsCount")
     var ratingsCount: Long? = null
     @SerializedName("readingModes")
-    var readingModes: com.example.gooner10.androiddeveloperfundamentals.model.ReadingModes? = null
+    var readingModes: ReadingModes? = null
     @SerializedName("title")
     var title: String? = null
 

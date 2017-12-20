@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals.model
+package com.example.gooner10.androiddeveloperfundamentals.backgroundTask.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -11,9 +11,9 @@ class AccessInfo {
     @SerializedName("embeddable")
     var embeddable: Boolean? = null
     @SerializedName("epub")
-    var epub: com.example.gooner10.androiddeveloperfundamentals.model.Epub? = null
+    var epub: com.example.gooner10.androiddeveloperfundamentals.backgroundTask.model.Epub? = null
     @SerializedName("pdf")
-    var pdf: com.example.gooner10.androiddeveloperfundamentals.model.Pdf? = null
+    var pdf: com.example.gooner10.androiddeveloperfundamentals.backgroundTask.model.Pdf? = null
     @SerializedName("publicDomain")
     var publicDomain: Boolean? = null
     @SerializedName("quoteSharingAllowed")

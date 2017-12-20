@@ -1,8 +1,8 @@
-package com.example.gooner10.androiddeveloperfundamentals.model
+package com.example.gooner10.androiddeveloperfundamentals.backgroundTask.model
 
 import com.google.gson.annotations.SerializedName
 
-class Pdf {
+class Epub {
 
     @SerializedName("downloadLink")
     var downloadLink: String? = null
