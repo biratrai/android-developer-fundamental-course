@@ -30,7 +30,7 @@
         <activity android:name=".ToastActivity" />
         <activity android:name=".KeyboardActivity" />
         <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".AsyncLoaderActivity" />
+        <activity android:name=".backgroundTask.AsyncLoaderActivity" />
     </application>
 
 </manifest>
