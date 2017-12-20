@@ -51,4 +51,5 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="no_network">Please check your network connection and try again.</string>
     <string name="no_results">No Results Found</string>
     <string name="loading">Loading...</string>
+    <string name="asyncloader">AsyncLoader</string>
 </resources>

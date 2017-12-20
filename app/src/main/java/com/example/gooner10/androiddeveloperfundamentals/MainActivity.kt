@@ -23,4 +23,8 @@ class MainActivity : AppCompatActivity() {
     fun launchRecyclerView(view: View) {
         startActivity(Intent(this, RecyclerViewActivity::class.java))
     }
+
+    fun launchLoader(view: View) {
+        startActivity(Intent(this, AsyncLoaderActivity::class.java))
+    }
 }

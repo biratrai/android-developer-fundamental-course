@@ -51,4 +51,18 @@
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/launchKeyboardActivity" />
 
+    <Button
+        android:id="@+id/asyncLoaderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="launchLoader"
+        android:text="@string/asyncloader"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerButton" />
+
 </android.support.constraint.ConstraintLayout>
