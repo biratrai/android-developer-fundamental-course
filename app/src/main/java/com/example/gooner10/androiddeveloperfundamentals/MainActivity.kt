@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoaderActivity
+import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
 
 class MainActivity : AppCompatActivity() {
@@ -32,5 +33,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchRx(view: View) {
         startActivity(Intent(this, RxActivity::class.java))
+    }
+
+    fun launchDatabaseActivity(view: View) {
+        startActivity(Intent(this, DatabaseActivity::class.java))
     }
 }

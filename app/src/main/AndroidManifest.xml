@@ -31,7 +31,8 @@
         <activity android:name=".KeyboardActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".backgroundTask.AsyncLoaderActivity" />
-        <activity android:name=".rxKotlin.RxActivity"></activity>
+        <activity android:name=".rxKotlin.RxActivity" />
+        <activity android:name=".database.DatabaseActivity"></activity>
     </application>
 
 </manifest>
