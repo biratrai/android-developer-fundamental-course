@@ -31,6 +31,7 @@
         <activity android:name=".KeyboardActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".backgroundTask.AsyncLoaderActivity" />
+        <activity android:name=".rxKotlin.RxActivity"></activity>
     </application>
 
 </manifest>
