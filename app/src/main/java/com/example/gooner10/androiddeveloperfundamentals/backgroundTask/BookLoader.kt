@@ -60,14 +60,10 @@ class BookLoader// Constructor providing a reference to the search term.
     }
 
     companion object {
-        fun apiService(): GoogleBooksApiService {
-            val retrofit = Retrofit.Builder()
-                    .baseUrl("https://www.googleapis.com/books/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-
-            return retrofit.create(GoogleBooksApiService::class.java)
-        }
+        fun apiService() = Retrofit.Builder()
+                .baseUrl("https://www.googleapis.com/books/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build().create(GoogleBooksApiService::class.java)
     }
 }
 
