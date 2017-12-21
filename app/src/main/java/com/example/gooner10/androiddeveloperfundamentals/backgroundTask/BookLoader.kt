@@ -63,7 +63,7 @@ class BookLoader// Constructor providing a reference to the search term.
         fun apiService() = Retrofit.Builder()
                 .baseUrl("https://www.googleapis.com/books/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .build().create(GoogleBooksApiService::class.java)
+                .build().create(GoogleBooksApiService::class.java)!!
     }
 }
 
