@@ -99,4 +99,48 @@ class WordListOpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
 
                 KEY_WORD + " TEXT );"
     }
+
+    fun search(searchText: String): String {
+        var searchString = searchText
+        val columns = arrayOf(KEY_WORD)
+        val where = KEY_WORD + " LIKE ?"
+        searchString = "%$searchString%"
+        val whereArgs = arrayOf(searchString)
+
+        var cursor: Cursor? = null
+        var search_result = ""
+        try {
+            if (readableDB == null) {
+                readableDB = readableDatabase
+                Log.d(TAG, "readableDB: " + readableDB)
+            }
+            cursor = readableDB!!.query(WORD_LIST_TABLE, columns, where, whereArgs, null, null, null)
+            Log.d(TAG, "cursor: " + cursor)
+            Log.d(TAG, "cursor.count: " + cursor.count)
+            cursor!!.moveToFirst()
+            if (cursor.count > 0) {
+                var index: Int
+                var result: String
+                // Iterate over the cursor, while there are entries.
+                do {
+                    // Don't guess at the column index. Get the index for the named column.
+                    index = cursor.getColumnIndex(WordListOpenHelper.KEY_WORD)
+                    // Get the value from the column for the current cursor.
+                    result = cursor.getString(index)
+                    // Add result to what's already in the text view.
+                    search_result += result + "\n"
+                } while (cursor.moveToNext())
+                cursor.close()
+            } else {
+                search_result = "No result."
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "SEARCH EXCEPTION! " + e) // Just log the exception
+        } finally {
+            // Must close cursor and db now that we are done with it.
+            cursor!!.close()
+        }
+
+        return search_result
+    }
 }
