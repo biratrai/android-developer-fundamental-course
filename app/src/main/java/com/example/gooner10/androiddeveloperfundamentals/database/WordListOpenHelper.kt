@@ -2,6 +2,7 @@ package com.example.gooner10.androiddeveloperfundamentals.database
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
@@ -10,6 +11,9 @@ import android.util.Log
  * Database OpenHelper
  */
 class WordListOpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+    private var writableDB: SQLiteDatabase? = null
+    private var readableDB: SQLiteDatabase? = null
+
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(WORD_LIST_TABLE_CREATE)
         fillDatabaseWithData(db)
@@ -42,6 +46,33 @@ class WordListOpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
                         + newVersion + ", which will destroy all old data")
         db.execSQL("DROP TABLE IF EXISTS " + WORD_LIST_TABLE)
         onCreate(db)
+    }
+
+    fun query(): List<WordItem> {
+        val query = "SELECT  * FROM " + WORD_LIST_TABLE +
+                " ORDER BY " + KEY_WORD + " ASC "
+
+        var cursor: Cursor? = null
+        val wordList: MutableList<WordItem> = arrayListOf()
+
+        try {
+            if (readableDB == null) {
+                readableDB = readableDatabase
+            }
+            cursor = readableDB!!.rawQuery(query, null)
+            while (cursor!!.moveToNext()) {
+                val wordItem = WordItem()
+                wordItem.id = cursor.getInt(cursor.getColumnIndex(KEY_ID))
+                wordItem.word = cursor.getString(cursor.getColumnIndex(KEY_WORD))
+                wordList.add(wordItem)
+            }
+        } catch (e: Exception) {
+            Log.d(TAG, "QUERY EXCEPTION! " + e) // Just log the exception
+        } finally {
+            // Must close cursor and db now that we are done with it.
+            cursor!!.close()
+            return wordList
+        }
     }
 
     companion object {
