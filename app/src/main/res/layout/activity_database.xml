@@ -14,13 +14,15 @@
         android:padding="8dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        tools:text="@string/article_text" />
+        tools:text="@string/article_title" />
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/search_the_database"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordListText"
         tools:text="@string/article_title" />
 
@@ -34,5 +36,16 @@
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+
+    <Button
+        android:id="@+id/searchRoomDb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="searchWord"
+        android:text="@string/search_room"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchDb" />
 
 </android.support.constraint.ConstraintLayout>
