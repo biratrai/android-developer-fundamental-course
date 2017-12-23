@@ -41,7 +41,7 @@
         android:id="@+id/searchRoomDb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="searchWord"
+        android:onClick="searchRoom"
         android:text="@string/search_room"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
