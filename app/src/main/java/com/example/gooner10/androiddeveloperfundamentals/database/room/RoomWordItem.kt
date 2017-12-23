@@ -15,10 +15,4 @@ class RoomWordItem {
 
     @ColumnInfo(name = "word_column")
     var word: String? = ""
-
-//    @Ignore
-//    constructor(id: Int, word: String) {
-//        this.id = id
-//        this.word = word
-//    }
 }
