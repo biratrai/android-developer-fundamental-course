@@ -10,8 +10,8 @@ import android.arch.persistence.room.Query
  */
 @Dao
 interface RoomWordDao {
-    @get:Query("SELECT * FROM room_word_list")
-    val all: List<RoomWordItem>
+    @Query("SELECT * FROM room_word_list")
+    fun getAllFromDb(): List<RoomWordItem>
 
     @Query("SELECT * FROM room_word_list WHERE word_column LIKE :word")
     fun findByWord(word: String): RoomWordItem

@@ -30,6 +30,7 @@ class DatabaseActivity : AppCompatActivity() {
 
         // Create RoomDb
         roomWordDb = Room.databaseBuilder(applicationContext, RoomWordDatabase::class.java, DATABASE_NAME)
+                .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build()
         insertInRoom()
@@ -110,7 +111,5 @@ class DatabaseActivity : AppCompatActivity() {
             subscriber.onNext(searchString?.word.toString())
             subscriber.onComplete()
         }
-
-
     }
 }
