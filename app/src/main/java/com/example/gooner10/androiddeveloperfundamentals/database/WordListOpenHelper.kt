@@ -70,7 +70,7 @@ class WordListOpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
             Log.d(TAG, "QUERY EXCEPTION! " + e) // Just log the exception
         } finally {
             // Must close cursor and db now that we are done with it.
-            cursor!!.close()
+            cursor?.close()
             return wordList
         }
     }
@@ -83,8 +83,8 @@ class WordListOpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
 
         // Version has to be 1 first time or app will crash.
         private val DATABASE_VERSION = 1
-        private val WORD_LIST_TABLE = "word_entries"
-        private val DATABASE_NAME = "wordlist"
+        val WORD_LIST_TABLE = "word_entries"
+        val DATABASE_NAME = "wordlist"
 
         // Column names...
         val KEY_ID = "_id"
