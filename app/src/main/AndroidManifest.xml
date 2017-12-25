@@ -43,7 +43,11 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".alarm.AlarmActivity"></activity>
+        <activity android:name=".alarm.AlarmActivity" />
+
+        <service
+            android:name=".alarm.AlarmntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
