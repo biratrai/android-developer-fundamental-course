@@ -107,4 +107,18 @@
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/databaseButton" />
 
+    <Button
+        android:id="@+id/scheduleJobButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="launchAlarmActivity"
+        android:text="@string/job_activity"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/alarmButton" />
+
 </android.support.constraint.ConstraintLayout>
