@@ -12,7 +12,7 @@ import android.content.Context
  * TODO: Customize class - update intent actions, extra parameters and static
  * helper methods.
  */
-class AlarmntentService : IntentService("AlarmntentService") {
+class AlarmItentService : IntentService("AlarmItentService") {
 
     override fun onHandleIntent(intent: Intent?) {
         if (intent != null) {
@@ -65,7 +65,7 @@ class AlarmntentService : IntentService("AlarmntentService") {
          */
         // TODO: Customize helper method
         fun startActionFoo(context: Context, param1: String, param2: String) {
-            val intent = Intent(context, AlarmntentService::class.java)
+            val intent = Intent(context, AlarmItentService::class.java)
             intent.action = ACTION_FOO
             intent.putExtra(EXTRA_PARAM1, param1)
             intent.putExtra(EXTRA_PARAM2, param2)
@@ -80,7 +80,7 @@ class AlarmntentService : IntentService("AlarmntentService") {
          */
         // TODO: Customize helper method
         fun startActionBaz(context: Context, param1: String, param2: String) {
-            val intent = Intent(context, AlarmntentService::class.java)
+            val intent = Intent(context, AlarmItentService::class.java)
             intent.action = ACTION_BAZ
             intent.putExtra(EXTRA_PARAM1, param1)
             intent.putExtra(EXTRA_PARAM2, param2)

@@ -33,6 +33,8 @@
         <activity android:name=".backgroundTask.AsyncLoaderActivity" />
         <activity android:name=".rxKotlin.RxActivity" />
         <activity android:name=".database.DatabaseActivity" />
+        <activity android:name=".jobScheduler.JobActivity" />
+        <activity android:name=".alarm.AlarmActivity" />
 
         <receiver
             android:name=".alarm.AlarmReceiver"
@@ -43,13 +45,15 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".alarm.AlarmActivity" />
-
         <service
-            android:name=".alarm.AlarmntentService"
+            android:name=".alarm.AlarmItentService"
             android:exported="false" />
 
-        <activity android:name=".jobScheduler.JobActivity"></activity>
+        <service
+            android:name=".jobScheduler.NotificationJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 
 </manifest>
