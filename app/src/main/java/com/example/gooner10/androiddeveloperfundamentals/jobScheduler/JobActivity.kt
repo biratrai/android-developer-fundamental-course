@@ -33,6 +33,7 @@ class JobActivity : AppCompatActivity() {
             val serviceName = ComponentName(packageName,
                     NotificationJobService::class.java.name)
             val builder = JobInfo.Builder(JOB_ID, serviceName)
+                    .setRequiresCharging(true)
 
             val notificationJob = builder.build()
             jobScheduler?.schedule(notificationJob)

@@ -116,7 +116,7 @@
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:onClick="launchAlarmActivity"
+        android:onClick="launchJobActivity"
         android:text="@string/job_activity"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/alarmButton" />
