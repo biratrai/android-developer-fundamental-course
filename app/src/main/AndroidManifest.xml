@@ -47,7 +47,9 @@
 
         <service
             android:name=".alarm.AlarmntentService"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <activity android:name=".jobScheduler.JobActivity"></activity>
     </application>
 
 </manifest>
