@@ -13,7 +13,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         if (ACTION_USER_ALARM.equals(intent.action)) {
-            Log.d(TAG, "Received intent" + intent.getStringExtra(ALARM_DATA))
+            Log.d(TAG, "Received intent -> " + intent.getStringExtra(ALARM_DATA))
         }
     }
 }

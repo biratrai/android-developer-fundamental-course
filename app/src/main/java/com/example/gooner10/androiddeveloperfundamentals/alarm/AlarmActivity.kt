@@ -7,11 +7,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
 
 class AlarmActivity : AppCompatActivity() {
     private val ALARM_REQUEST_CODE = 2017
+    private val TAG = AlarmActivity::class.java.simpleName
 
     companion object {
         const val ALARM_DATA = "data"
@@ -34,9 +36,12 @@ class AlarmActivity : AppCompatActivity() {
         var alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         var currentTimeInMilliSeconds = SystemClock.elapsedRealtime()
-        var ONE_HOUR = 6 * 1000
-
+        var ONE_HOUR = 6 * 1000L
+        Log.d(TAG, "currentTimeInMilliSeconds: " + currentTimeInMilliSeconds)
         var alarmTime = currentTimeInMilliSeconds + ONE_HOUR
-        alarmManager.set(AlarmManager.ELAPSED_REALTIME, alarmTime, pendingIntent)
+        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,
+                ONE_HOUR,
+                6 * 1000
+                , pendingIntent)
     }
 }
