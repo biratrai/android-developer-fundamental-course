@@ -21,7 +21,7 @@ class NotificationJobService : JobService() {
     }
 
     override fun onStartJob(jobParameters: JobParameters?): Boolean {
-        val intent: Intent = Intent(this, JobActivity::class.java)
+        val intent = Intent(this, JobActivity::class.java)
         var pendingIntent: PendingIntent = PendingIntent.getActivity(this,
                 REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
