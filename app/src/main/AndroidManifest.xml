@@ -48,12 +48,12 @@
         <service
             android:name=".alarm.AlarmItentService"
             android:exported="false" />
-
         <service
             android:name=".jobScheduler.NotificationJobService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
+        <activity android:name=".contentProvider.ContentProviderActivity"></activity>
     </application>
 
 </manifest>
