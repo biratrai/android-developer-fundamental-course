@@ -48,4 +48,8 @@ class MainActivity : AppCompatActivity() {
     fun launchJobActivity(view: View) {
         startActivity(Intent(this, JobActivity::class.java))
     }
+
+    fun launchProviderActivity(view: View) {
+        startActivity(Intent(this, JobActivity::class.java))
+    }
 }
