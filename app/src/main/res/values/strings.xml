@@ -50,7 +50,7 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="no_search_term">Please enter a search term</string>
     <string name="no_network">Please check your network connection and try again.</string>
     <string name="no_results">No Results Found</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="asyncloader">AsyncLoader</string>
     <string name="rxjava">RxJava</string>
     <string name="database">Database</string>
@@ -63,4 +63,11 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="cancel_job">Cancel Job</string>
     <string name="job_activity">Job Activity</string>
     <string name="provider_activity">Provider Activity</string>
+
+    <string-array name="words">
+        <item>Android</item>
+        <item>Activity</item>
+        <item>ContentProvider</item>
+        <item>ContentResolver</item>
+    </string-array>
 </resources>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.alarm.AlarmActivity
 import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoaderActivity
+import com.example.gooner10.androiddeveloperfundamentals.contentProvider.ContentProviderActivity
 import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
 import com.example.gooner10.androiddeveloperfundamentals.jobScheduler.JobActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
@@ -50,6 +51,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchProviderActivity(view: View) {
-        startActivity(Intent(this, JobActivity::class.java))
+        startActivity(Intent(this, ContentProviderActivity::class.java))
     }
 }
