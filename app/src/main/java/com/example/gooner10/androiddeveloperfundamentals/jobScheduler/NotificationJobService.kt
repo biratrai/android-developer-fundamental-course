@@ -9,6 +9,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
+import android.support.annotation.RequiresApi
 import android.support.v4.app.NotificationCompat
 import android.util.Log
 import com.example.gooner10.androiddeveloperfundamentals.R
@@ -28,6 +29,7 @@ class NotificationJobService : JobService() {
         return true
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onStartJob(jobParameters: JobParameters?): Boolean {
         Log.d(TAG, "Job Started")
         val intent = Intent(this, JobActivity::class.java)
