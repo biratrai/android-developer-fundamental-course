@@ -53,7 +53,13 @@
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <activity android:name=".contentProvider.ContentProviderActivity"></activity>
+        <activity android:name=".contentProvider.ContentProviderActivity" />
+
+        <provider
+            android:name=".contentProvider.MyContentProvider"
+            android:authorities="com.example.gooner10.contentprovider"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
