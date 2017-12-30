@@ -10,6 +10,7 @@ import com.example.gooner10.androiddeveloperfundamentals.contentProvider.Content
 import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
 import com.example.gooner10.androiddeveloperfundamentals.jobScheduler.JobActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
+import org.jetbrains.anko.intentFor
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,5 +53,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchProviderActivity(view: View) {
         startActivity(Intent(this, ContentProviderActivity::class.java))
+    }
+
+    fun launchAnkoActivity(view: View) {
+        startActivity(intentFor<AnkoActivity>())
     }
 }
