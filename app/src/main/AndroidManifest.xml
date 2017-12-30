@@ -60,6 +60,8 @@
             android:authorities="com.example.gooner10.contentprovider"
             android:enabled="true"
             android:exported="true" />
+
+        <activity android:name=".AnkoActivity"></activity>
     </application>
 
 </manifest>
