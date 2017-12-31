@@ -41,4 +41,21 @@ class PhoneActivity : AppCompatActivity() {
             Toast.makeText(this, "Phone Number is empty", Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun sendSms(view: View) {
+        val smsString = sms_editText.text.toString()
+        val smsIntent: Intent
+        if (smsString.isNotBlank()) {
+            val smsIntent = Intent(Intent.ACTION_VIEW)
+            if (smsIntent.resolveActivity(packageManager) != null) {
+                smsIntent.data = Uri.parse("sms:")
+                smsIntent.putExtra("sms_body", smsString)
+                startActivity(smsIntent)
+            } else {
+                Toast.makeText(this, "No Activity to SMS", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(this, "SMS text is empty", Toast.LENGTH_SHORT).show()
+        }
+    }
 }

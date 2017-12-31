@@ -66,6 +66,7 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="anko_activity">Anko Activity</string>
     <string name="enter_phone_number">Enter phone number</string>
     <string name="dial">dial</string>
+    <string name="enter_message_for_sms">Enter message for SMS</string>
 
     <string-array name="words">
         <item>Android</item>
