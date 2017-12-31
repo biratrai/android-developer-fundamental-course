@@ -10,10 +10,12 @@ class AnkoActivity : AppCompatActivity(), AnkoLogger {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_anko)
 
         verticalLayout {
-            val name = editText()
+            val name = editText(){
+                hint = "Type message"
+            }
+
             val toastButton = button("Say Hello") {
                 onClick {
                     toast("Hello, ${name.text}!")
@@ -33,6 +35,7 @@ class AnkoActivity : AppCompatActivity(), AnkoLogger {
             }
 
         }
+
 
     }
 }
