@@ -1,151 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gooner10.androiddeveloperfundamentals.MainActivity">
 
-    <Button
-        android:id="@+id/launchToastActivity"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:onClick="launchToast"
-        android:text="@string/toast_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/launchKeyboardActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchKeyboard"
-        android:text="@string/keyboard_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/launchToastActivity" />
+        <Button
+            android:id="@+id/launchToastActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="launchToast"
+            android:text="@string/toast_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/recyclerButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchRecyclerView"
-        android:text="@string/recyclerview_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/launchKeyboardActivity" />
+        <Button
+            android:id="@+id/launchKeyboardActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchKeyboard"
+            android:text="@string/keyboard_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/launchToastActivity" />
 
-    <Button
-        android:id="@+id/asyncLoaderButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchLoader"
-        android:text="@string/asyncloader"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerButton" />
+        <Button
+            android:id="@+id/recyclerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchRecyclerView"
+            android:text="@string/recyclerview_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/launchKeyboardActivity" />
 
-    <Button
-        android:id="@+id/rxButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchRx"
-        android:text="@string/rxjava"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/asyncLoaderButton" />
+        <Button
+            android:id="@+id/asyncLoaderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchLoader"
+            android:text="@string/asyncloader"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerButton" />
 
-    <Button
-        android:id="@+id/databaseButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchDatabaseActivity"
-        android:text="@string/database"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/rxButton" />
+        <Button
+            android:id="@+id/rxButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchRx"
+            android:text="@string/rxjava"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/asyncLoaderButton" />
 
-    <Button
-        android:id="@+id/alarmButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchAlarmActivity"
-        android:text="@string/alarm_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/databaseButton" />
+        <Button
+            android:id="@+id/databaseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchDatabaseActivity"
+            android:text="@string/database"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/rxButton" />
 
-    <Button
-        android:id="@+id/jobButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchJobActivity"
-        android:text="@string/job_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/alarmButton" />
+        <Button
+            android:id="@+id/alarmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchAlarmActivity"
+            android:text="@string/alarm_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/databaseButton" />
 
-    <Button
-        android:id="@+id/providerButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchProviderActivity"
-        android:text="@string/provider_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/jobButton" />
+        <Button
+            android:id="@+id/jobButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchJobActivity"
+            android:text="@string/job_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/alarmButton" />
 
-    <Button
-        android:id="@+id/ankoButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="launchAnkoActivity"
-        android:text="@string/anko_activity"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/providerButton" />
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/providerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchProviderActivity"
+            android:text="@string/provider_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/jobButton" />
+
+        <Button
+            android:id="@+id/ankoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchAnkoActivity"
+            android:text="@string/anko_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/providerButton" />
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

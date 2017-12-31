@@ -61,7 +61,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AnkoActivity"></activity>
+        <activity android:name=".AnkoActivity" />
+        <activity android:name=".phone.PhoneActivity"></activity>
     </application>
 
 </manifest>
