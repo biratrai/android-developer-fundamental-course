@@ -152,6 +152,20 @@
             android:text="@string/anko_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/providerButton" />
+
+        <Button
+            android:id="@+id/phoneButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchPhoneActivity"
+            android:text="Phone Activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/ankoButton" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

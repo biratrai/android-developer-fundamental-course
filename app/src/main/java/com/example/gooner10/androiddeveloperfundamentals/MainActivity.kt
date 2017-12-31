@@ -9,6 +9,7 @@ import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoa
 import com.example.gooner10.androiddeveloperfundamentals.contentProvider.ContentProviderActivity
 import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
 import com.example.gooner10.androiddeveloperfundamentals.jobScheduler.JobActivity
+import com.example.gooner10.androiddeveloperfundamentals.phone.PhoneActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
 import org.jetbrains.anko.intentFor
 
@@ -57,5 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchAnkoActivity(view: View) {
         startActivity(intentFor<AnkoActivity>())
+    }
+
+    fun launchPhoneActivity(view: View) {
+        startActivity(intentFor<PhoneActivity>())
     }
 }
