@@ -14,4 +14,27 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <!-- Style for a widget "panel" - linear layout with white background. -->
+    <style name="AppWidgetSection" parent="@android:style/Widget">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <!-- Style for app widget labels and main text. -->
+    <style name="AppWidgetLabel" parent="AppWidgetText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppWidgetText" parent="Base.TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- Style for app widget button. -->
+    <style name="AppWidgetButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
 </resources>
