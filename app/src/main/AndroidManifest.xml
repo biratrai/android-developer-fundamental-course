@@ -62,7 +62,8 @@
             android:exported="true" />
 
         <activity android:name=".AnkoActivity" />
-        <activity android:name=".phone.PhoneActivity"></activity>
+        <activity android:name=".phone.PhoneActivity" />
+        <activity android:name=".widget.WidgetActivity"></activity>
     </application>
 
 </manifest>
