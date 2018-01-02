@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.toast
 
 import android.app.Activity
 import android.content.Intent
@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.example.gooner10.androiddeveloperfundamentals.ScrollActivity.Companion.REPLY
+import com.example.gooner10.androiddeveloperfundamentals.MainActivity
+import com.example.gooner10.androiddeveloperfundamentals.R
+import com.example.gooner10.androiddeveloperfundamentals.scroll.ScrollActivity
+import com.example.gooner10.androiddeveloperfundamentals.scroll.ScrollActivity.Companion.REPLY
 import kotlinx.android.synthetic.main.activity_toast.*
 
 class ToastActivity : AppCompatActivity() {

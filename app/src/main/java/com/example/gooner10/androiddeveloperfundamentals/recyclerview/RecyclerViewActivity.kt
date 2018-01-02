@@ -1,8 +1,9 @@
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.recyclerview
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.example.gooner10.androiddeveloperfundamentals.R
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 import java.util.*
 

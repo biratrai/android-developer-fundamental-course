@@ -20,16 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ScrollActivity"
+            android:name=".scroll.ScrollActivity"
             android:label="Scroll Activity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ToastActivity" />
-        <activity android:name=".KeyboardActivity" />
-        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".toast.ToastActivity" />
+        <activity android:name=".keyboard.KeyboardActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity android:name=".backgroundTask.AsyncLoaderActivity" />
         <activity android:name=".rxKotlin.RxActivity" />
         <activity android:name=".database.DatabaseActivity" />
@@ -61,7 +61,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AnkoActivity" />
+        <activity android:name=".anko.AnkoActivity" />
         <activity android:name=".phone.PhoneActivity" />
 
         <receiver android:name=".widget.WidgetProvider">
@@ -73,6 +73,8 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
+
+        <activity android:name=".sensor.SensorActivity"></activity>
     </application>
 
 </manifest>

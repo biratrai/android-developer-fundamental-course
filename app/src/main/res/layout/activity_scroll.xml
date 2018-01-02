@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gooner10.androiddeveloperfundamentals.ScrollActivity">
+    tools:context="com.example.gooner10.androiddeveloperfundamentals.scroll.ScrollActivity">
 
     <TextView
         android:id="@+id/heading"

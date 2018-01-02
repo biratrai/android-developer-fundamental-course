@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.anko
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

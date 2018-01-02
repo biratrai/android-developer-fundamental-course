@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.keyboard
 
 import android.app.DialogFragment
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.gooner10.androiddeveloperfundamentals.R
 import kotlinx.android.synthetic.main.activity_keyboard.*
 
 class KeyboardActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {

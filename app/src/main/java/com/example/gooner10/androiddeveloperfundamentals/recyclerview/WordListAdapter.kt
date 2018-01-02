@@ -1,10 +1,11 @@
-package com.example.gooner10.androiddeveloperfundamentals
+package com.example.gooner10.androiddeveloperfundamentals.recyclerview
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.gooner10.androiddeveloperfundamentals.R
 import kotlinx.android.synthetic.main.wordlist_item.view.*
 import java.util.*
 
