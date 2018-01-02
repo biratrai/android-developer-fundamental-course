@@ -69,6 +69,7 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="enter_message_for_sms">Enter message for SMS</string>
     <string name="phone_activity">Phone Activity</string>
     <string name="sensor_activity">Sensor Activity</string>
+    <string name="sensor_data">Sensor Data</string>
 
     <string-array name="words">
         <item>Android</item>

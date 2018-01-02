@@ -47,13 +47,12 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
         Log.d(TAG, "sensor: " + sensor + accuracy)
-
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
         Log.d(TAG, "event: " + event)
         when (event!!.sensor.type) {
-            Sensor.TYPE_LIGHT -> Log.d(TAG, "TYPE_LIGHT")
+            Sensor.TYPE_LIGHT -> sensor_data.text = event.values[0].toString()
 
             else -> Log.d(TAG, "Not useful sensor")
 
