@@ -14,6 +14,7 @@ import com.example.gooner10.androiddeveloperfundamentals.keyboard.KeyboardActivi
 import com.example.gooner10.androiddeveloperfundamentals.phone.PhoneActivity
 import com.example.gooner10.androiddeveloperfundamentals.recyclerview.RecyclerViewActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
+import com.example.gooner10.androiddeveloperfundamentals.sensor.SensorActivity
 import com.example.gooner10.androiddeveloperfundamentals.toast.ToastActivity
 import org.jetbrains.anko.intentFor
 
@@ -66,5 +67,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchPhoneActivity(view: View) {
         startActivity(intentFor<PhoneActivity>())
+    }
+
+    fun launchSensorActivity(view: View) {
+        startActivity(intentFor<SensorActivity>())
     }
 }

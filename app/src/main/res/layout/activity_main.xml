@@ -162,19 +162,19 @@
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:onClick="launchPhoneActivity"
-            android:text="Phone Activity"
+            android:text="@string/phone_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/ankoButton" />
 
         <Button
-            android:id="@+id/widgetButton"
+            android:id="@+id/sensorButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:onClick="launchPhoneActivity"
-            android:text="Phone Activity"
+            android:onClick="launchSensorActivity"
+            android:text="@string/sensor_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/phoneButton" />
     </android.support.constraint.ConstraintLayout>
