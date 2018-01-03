@@ -81,4 +81,10 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     </string-array>
 
     <string name="location_text">"Latitude: %1$.4f \n Longitude: %2$.4f \n Timestamp: %3$tr"</string>
+    <string name="no_location_available">No location available</string>
+    <string name="user_location">User Location</string>
+    <string name="get_address">Get Address</string>
+    <string name="address_not_found">Address was not found</string>
+    <string name="user_address">User Address</string>
+
 </resources>
