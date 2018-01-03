@@ -74,7 +74,8 @@
                 android:resource="@xml/widget_info" />
         </receiver>
 
-        <activity android:name=".sensor.SensorActivity"></activity>
+        <activity android:name=".sensor.SensorActivity" />
+        <activity android:name=".geofeature.GeoActivity"></activity>
     </application>
 
 </manifest>
