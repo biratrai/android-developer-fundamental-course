@@ -9,6 +9,7 @@ import com.example.gooner10.androiddeveloperfundamentals.anko.AnkoActivity
 import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoaderActivity
 import com.example.gooner10.androiddeveloperfundamentals.contentProvider.ContentProviderActivity
 import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
+import com.example.gooner10.androiddeveloperfundamentals.geofeature.GeoActivity
 import com.example.gooner10.androiddeveloperfundamentals.jobScheduler.JobActivity
 import com.example.gooner10.androiddeveloperfundamentals.keyboard.KeyboardActivity
 import com.example.gooner10.androiddeveloperfundamentals.phone.PhoneActivity
@@ -71,5 +72,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchSensorActivity(view: View) {
         startActivity(intentFor<SensorActivity>())
+    }
+
+    fun launchGeoActivity(view: View) {
+        startActivity(intentFor<GeoActivity>())
     }
 }

@@ -177,6 +177,18 @@
             android:text="@string/sensor_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/phoneButton" />
+
+        <Button
+            android:id="@+id/geoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchGeoActivity"
+            android:text="@string/sensor_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/sensorButton" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
