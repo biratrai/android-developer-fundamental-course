@@ -9,6 +9,7 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
@@ -20,6 +21,7 @@ import com.example.gooner10.androiddeveloperfundamentals.R
 
 class ClearEditText : AppCompatEditText {
     private var clearButtonImage: Drawable? = null
+    private var TAG = ClearEditText::class.java.simpleName
 
     constructor(context: Context) : super(context) {
         init()
@@ -55,11 +57,23 @@ class ClearEditText : AppCompatEditText {
             @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                 if (compoundDrawablesRelative[2] != null) {
-                    val clearButtonStart: Float // Used for LTR languages
+                    val clearButtonStart: Int // Used for LTR languages
                     val clearButtonEnd: Float  // Used for RTL languages
-                    val isClearButtonClicked = false
+                    var isClearButtonClicked = false
                     // TODO: Detect the touch in RTL or LTR layout direction.
                     // TODO: Check for actions if the button is tapped.
+                    if (layoutDirection == View.LAYOUT_DIRECTION_RTL) {
+                        Log.d(TAG, "LAYOUT_DIRECTION_RTL")
+                    } else if (layoutDirection == View.LAYOUT_DIRECTION_LTR) {
+                        Log.d(TAG, "LAYOUT_DIRECTION_LTR")
+                        clearButtonStart = ((width - paddingEnd) - clearButtonImage!!.intrinsicWidth)
+                        if (event!!.x > clearButtonStart) {
+                            isClearButtonClicked = true
+                            Log.d(TAG, "Clear button is clicked")
+                        } else {
+                            Log.d(TAG, "Clear button not clicked")
+                        }
+                    }
                 }
                 return false
             }
