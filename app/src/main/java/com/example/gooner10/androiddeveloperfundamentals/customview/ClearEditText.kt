@@ -49,6 +49,7 @@ class ClearEditText : AppCompatEditText {
 
             override fun afterTextChanged(s: Editable) {}
         })
+
         // TODO: If the clear (X) button is tapped, clear the text.
         setOnTouchListener(object : View.OnTouchListener {
             @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)

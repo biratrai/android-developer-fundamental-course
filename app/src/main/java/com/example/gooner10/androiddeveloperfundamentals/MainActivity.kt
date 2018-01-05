@@ -8,6 +8,7 @@ import com.example.gooner10.androiddeveloperfundamentals.alarm.AlarmActivity
 import com.example.gooner10.androiddeveloperfundamentals.anko.AnkoActivity
 import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoaderActivity
 import com.example.gooner10.androiddeveloperfundamentals.contentProvider.ContentProviderActivity
+import com.example.gooner10.androiddeveloperfundamentals.customview.CustomActivity
 import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
 import com.example.gooner10.androiddeveloperfundamentals.geofeature.GeoActivity
 import com.example.gooner10.androiddeveloperfundamentals.jobScheduler.JobActivity
@@ -76,5 +77,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchGeoActivity(view: View) {
         startActivity(intentFor<GeoActivity>())
+    }
+
+    fun launchCustomActivity(view: View) {
+        startActivity(intentFor<CustomActivity>())
     }
 }
