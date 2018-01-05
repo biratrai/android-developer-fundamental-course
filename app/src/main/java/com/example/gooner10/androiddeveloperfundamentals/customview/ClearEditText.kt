@@ -1,4 +1,4 @@
-package com.example.gooner10.androiddeveloperfundamentals.places
+package com.example.gooner10.androiddeveloperfundamentals.customview
 
 import android.content.Context
 import android.graphics.drawable.Drawable

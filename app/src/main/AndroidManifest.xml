@@ -77,7 +77,8 @@
 
         <activity android:name=".sensor.SensorActivity" />
         <activity android:name=".geofeature.GeoActivity" />
-        <activity android:name=".places.PlacesActivity"></activity>
+        <activity android:name=".places.PlacesActivity" />
+        <activity android:name=".customview.CustomActivity"></activity>
     </application>
 
 </manifest>
