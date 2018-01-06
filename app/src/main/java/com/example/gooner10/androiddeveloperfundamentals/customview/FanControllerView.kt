@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 
 /**
@@ -42,5 +43,10 @@ class FanControllerView : View {
         // Initialize current selection.
         activeSelection = 0
         // TODO: Set up onClick listener for this view.
+        setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                return false
+            }
+        })
     }
 }
