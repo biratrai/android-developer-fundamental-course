@@ -37,7 +37,7 @@ class ClearEditText : AppCompatEditText {
 
     private fun init() {
         clearButtonImage = ResourcesCompat.getDrawable(resources,
-                R.drawable.ic_clear_black_24dp, null)
+                R.drawable.abc_ic_clear_material, null)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int,
@@ -58,12 +58,18 @@ class ClearEditText : AppCompatEditText {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                 if (compoundDrawablesRelative[2] != null) {
                     val clearButtonStart: Int // Used for LTR languages
-                    val clearButtonEnd: Float  // Used for RTL languages
+                    val clearButtonEnd: Int  // Used for RTL languages
                     var isClearButtonClicked = false
                     // TODO: Detect the touch in RTL or LTR layout direction.
                     // TODO: Check for actions if the button is tapped.
                     if (layoutDirection == View.LAYOUT_DIRECTION_RTL) {
                         Log.d(TAG, "LAYOUT_DIRECTION_RTL")
+                        clearButtonEnd = clearButtonImage!!.intrinsicWidth + paddingStart
+                        // If the touch occurred before the end of the button,
+                        // set isClearButtonClicked to true.
+                        if (event!!.x < clearButtonEnd) {
+                            isClearButtonClicked = true
+                        }
                     } else if (layoutDirection == View.LAYOUT_DIRECTION_LTR) {
                         Log.d(TAG, "LAYOUT_DIRECTION_LTR")
                         clearButtonStart = ((width - paddingEnd) - clearButtonImage!!.intrinsicWidth)
@@ -74,11 +80,28 @@ class ClearEditText : AppCompatEditText {
                             Log.d(TAG, "Clear button not clicked")
                         }
                     }
+                    // TODO: If the text changes, show or hide the clear (X) button.
+                    if (isClearButtonClicked) {
+                        if (event!!.action == MotionEvent.ACTION_DOWN) {
+                            clearButtonImage = ResourcesCompat.getDrawable(resources, R.drawable.ic_clear_black_24dp, null)
+                            showClearButton()
+                        }
+
+                        if (event.action == MotionEvent.ACTION_UP) {
+                            clearButtonImage = ResourcesCompat.getDrawable(resources, R.drawable.abc_ic_clear_material, null)
+                            text.clear()
+                            hideClearButton()
+                            return true
+                        }
+                    } else {
+                        return false
+                    }
                 }
+
                 return false
             }
+
         })
-        // TODO: If the text changes, show or hide the clear (X) button.
     }
 
     private fun showClearButton() {
