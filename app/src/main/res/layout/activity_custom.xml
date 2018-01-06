@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.gooner10.androiddeveloperfundamentals.customview.CustomActivity">
 
-    <ImageView
+    <com.example.gooner10.androiddeveloperfundamentals.customview.FanControllerView
         android:id="@+id/custom_image_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_height="510dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toTopOf="@+id/clearEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,5 +27,6 @@
         android:hint="@string/enter_your_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom_image_view" />
 </android.support.constraint.ConstraintLayout>
