@@ -5,12 +5,14 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 
 /**
  * Custom ImageView class that shows rotation of a fan
  */
 class FanControllerView : View {
+    private val TAG = FanControllerView::class.java.simpleName
     private val SELECTION_COUNT = 4 // Total number of selections.
     private var width: Float = 0.toFloat()                   // Custom view width.
     private var height: Float = 0.toFloat()                  // Custom view height.
@@ -43,7 +45,20 @@ class FanControllerView : View {
         // Initialize current selection.
         activeSelection = 0
         // TODO: Set up onClick listener for this view.
-        setOnClickListener { v -> v.isClickable }
+        setOnClickListener { v ->
+            run {
+                Log.d(TAG, "OnClicked " + activeSelection)
+                activeSelection = (activeSelection + 1) % SELECTION_COUNT
+
+                if (activeSelection >= 1) {
+                    dialPaint.color = Color.GREEN
+                } else {
+                    dialPaint.color = Color.GRAY
+                }
+
+                invalidate()
+            }
+        }
     }
 
     private fun computeXYForPosition(pos: Int, radius: Float): FloatArray {
