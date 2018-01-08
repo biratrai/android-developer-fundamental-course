@@ -90,4 +90,7 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="custom_view_activity">Custom View Activity</string>
     <string name="canvas_activity">Canvas Activity</string>
 
+
+    <string name="keep_tapping">Keep tapping.</string>
+    <string name="done">Done!</string>
 </resources>
