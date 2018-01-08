@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ImageView
 import com.example.gooner10.androiddeveloperfundamentals.R
+import kotlinx.android.synthetic.main.activity_canvas.*
 
 class CanvasActivity : AppCompatActivity() {
     private val OFFSET_CONSTANT = 120
@@ -32,6 +33,9 @@ class CanvasActivity : AppCompatActivity() {
         colorBackground = ResourcesCompat.getColor(resources, R.color.colorBackground, null)
         colorRectangle = ResourcesCompat.getColor(resources, R.color.colorRectangle, null)
         colorAccent = ResourcesCompat.getColor(resources, R.color.colorAccent, null)
+        paint.color = colorBackground as Int
+        paintText.color = ResourcesCompat.getColor(resources, R.color.colorPrimaryDark, null)
+        imageView = canvas_imageview
     }
 
     fun handleCanvas(view: View) {
