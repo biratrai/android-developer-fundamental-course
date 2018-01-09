@@ -44,7 +44,12 @@ class CanvasActivity : AppCompatActivity() {
         val halfWidth = width / 2
         val halfHeight = height / 2
         if (offset == OFFSET_CONSTANT) {
-
+            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+            imageView!!.setImageBitmap(bitmap)
+            canvas = Canvas(bitmap)
+            canvas!!.drawColor(this.colorBackground!!)
+            canvas!!.drawText(getString(R.string.keep_tapping), 100F, 100F, paintText)
+            offset += OFFSET_CONSTANT
         } else {
             if (offset < halfWidth && offset < halfHeight) {
                 paint.color = colorRectangle!! - MULTIPLIER * offset
@@ -58,9 +63,10 @@ class CanvasActivity : AppCompatActivity() {
                 paintText.getTextBounds(text, 0, text.length, bounds)
                 val x = halfWidth - bounds.centerX()
                 val y = halfHeight - bounds.centerY()
-                canvas!!.drawText(text, x, y, paintText)
+                canvas!!.drawText(text, x.toFloat(), y.toFloat(), paintText)
             }
 
         }
+        view.invalidate()
     }
 }
