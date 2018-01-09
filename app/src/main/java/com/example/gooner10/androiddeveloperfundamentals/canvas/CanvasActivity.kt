@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_canvas.*
 
 class CanvasActivity : AppCompatActivity() {
     private val OFFSET_CONSTANT = 120
-    private val offset = OFFSET_CONSTANT
+    private var offset = OFFSET_CONSTANT
     private var canvas: Canvas? = null
     private val paint: Paint = Paint()
     private val paintText: Paint = Paint(Paint.UNDERLINE_TEXT_FLAG)
@@ -39,6 +39,28 @@ class CanvasActivity : AppCompatActivity() {
     }
 
     fun handleCanvas(view: View) {
+        val width = view.width
+        val height = view.height
+        val halfWidth = width / 2
+        val halfHeight = height / 2
+        if (offset == OFFSET_CONSTANT) {
 
+        } else {
+            if (offset < halfWidth && offset < halfHeight) {
+                paint.color = colorRectangle!! - MULTIPLIER * offset
+                rect.set(offset, offset, width - offset, height - offset)
+                canvas!!.drawRect(rect, paint)
+                offset += OFFSET_CONSTANT
+            } else {
+                paint.color = this.colorAccent!!
+                canvas!!.drawCircle(halfWidth.toFloat(), halfHeight.toFloat(), (halfWidth / 3).toFloat(), paint)
+                val text = getString(R.string.done)
+                paintText.getTextBounds(text, 0, text.length, bounds)
+                val x = halfWidth - bounds.centerX()
+                val y = halfHeight - bounds.centerY()
+                canvas!!.drawText(text, x, y, paintText)
+            }
+
+        }
     }
 }
