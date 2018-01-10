@@ -14,8 +14,8 @@ import com.example.gooner10.androiddeveloperfundamentals.R
  * Custom Canvas View
  */
 class DrawCanvasView : View {
-    private val canvas: Canvas? = null
-    private val bitmap: Bitmap? = null
+    private var canvas: Canvas? = null
+    private var bitmap: Bitmap? = null
     private val paint: Paint = Paint()
     private val path: Path = Path()
     private var drawColor: Int? = null
@@ -34,4 +34,10 @@ class DrawCanvasView : View {
         paint.strokeWidth = 12F
     }
 
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        canvas = Canvas(bitmap)
+        canvas!!.drawColor(this.drawColor!!)
+    }
 }
