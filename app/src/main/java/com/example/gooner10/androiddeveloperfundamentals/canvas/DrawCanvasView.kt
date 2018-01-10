@@ -16,28 +16,22 @@ import com.example.gooner10.androiddeveloperfundamentals.R
 class DrawCanvasView : View {
     private val canvas: Canvas? = null
     private val bitmap: Bitmap? = null
-    private val paint: Paint? = null
-    private val path: Path? = null
-    private val drawColor: Int? = null
+    private val paint: Paint = Paint()
+    private val path: Path = Path()
+    private var drawColor: Int? = null
 
-
+    constructor(context: Context?) : super(context)
 
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
         val backgroundColor = ResourcesCompat.getColor(resources, R.color.opaque_yellow, null)
+        drawColor = ResourcesCompat.getColor(resources, R.color.opaque_orange, null)
+        paint.color = backgroundColor
+        paint.isAntiAlias = true
+        paint.isDither = true
+        paint.style = Paint.Style.STROKE
+        paint.strokeJoin = Paint.Join.ROUND
+        paint.strokeCap = Paint.Cap.ROUND
+        paint.strokeWidth = 12F
     }
 
-    constructor(context: Context?) : super(context) {
-
-    }
-
-
-//    public DrawCanvasView(Context context) {
-//        this(context, null);
-//    }
-//
-//    public DrawCanvasView(Context context, AttributeSet attributeSet)
-//    {
-//        super(context);
-//
-//    }
 }
