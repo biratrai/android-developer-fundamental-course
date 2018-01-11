@@ -40,4 +40,12 @@ class DrawCanvasView : View {
         canvas = Canvas(bitmap)
         canvas!!.drawColor(this.drawColor!!)
     }
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        canvas.run {
+            this!!.drawBitmap(bitmap, 0F, 0F, paint)
+            this.drawPath(path, paint)
+        }
+    }
 }
