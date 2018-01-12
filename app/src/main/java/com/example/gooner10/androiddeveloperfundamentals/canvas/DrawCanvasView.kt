@@ -24,6 +24,7 @@ class DrawCanvasView : View {
     private var drawColor: Int? = null
     private var x: Float? = null
     private var y: Float? = null
+    private val TOUCH_TOLERANCE = 4
 
     constructor(context: Context?) : this(context, null)
 
@@ -75,14 +76,20 @@ class DrawCanvasView : View {
     }
 
     private fun touchUp() {
-
+        path.lineTo(this.x!!, this.y!!)
+        canvas!!.drawPath(path, paint)
+        path.reset()
     }
 
     private fun touchMove(x: Float, y: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if ((Math.abs(x - this.x!!) >= TOUCH_TOLERANCE) || (Math.abs(y - this.y!!) >= TOUCH_TOLERANCE)) {
+            path.quadTo(this.x!!, this.y!!, (this.x!! + x) / 2, (this.y!! + y) / 2)
+        }
     }
 
     private fun touchStart(x: Float, y: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        path.moveTo(x, y)
+        this.x = x
+        this.y = y
     }
 }
