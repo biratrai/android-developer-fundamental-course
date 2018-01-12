@@ -7,6 +7,8 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.support.v4.content.res.ResourcesCompat
 import android.util.AttributeSet
+import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
 
@@ -14,11 +16,14 @@ import com.example.gooner10.androiddeveloperfundamentals.R
  * Custom Canvas View
  */
 class DrawCanvasView : View {
+    private val TAG = DrawCanvasView::class.java.simpleName
     private var canvas: Canvas? = null
     private var bitmap: Bitmap? = null
     private val paint: Paint = Paint()
     private val path: Path = Path()
     private var drawColor: Int? = null
+    private var x: Float? = null
+    private var y: Float? = null
 
     constructor(context: Context?) : this(context, null)
 
@@ -47,5 +52,37 @@ class DrawCanvasView : View {
             this!!.drawBitmap(bitmap, 0F, 0F, paint)
             this.drawPath(path, paint)
         }
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        val x = event.x
+        val y = event.y
+        val any = when (event.action) {
+            MotionEvent.ACTION_DOWN ->
+                touchStart(x, y)
+            MotionEvent.ACTION_MOVE -> {
+                touchMove(x, y)
+                invalidate()
+            }
+            MotionEvent.ACTION_UP -> {
+                touchUp()
+                invalidate()
+            }
+            else ->
+                Log.d(TAG, "Other events")
+        }
+        return true
+    }
+
+    private fun touchUp() {
+
+    }
+
+    private fun touchMove(x: Float, y: Float) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun touchStart(x: Float, y: Float) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
