@@ -20,7 +20,7 @@ class DrawCanvasView : View {
     private val path: Path = Path()
     private var drawColor: Int? = null
 
-    constructor(context: Context?) : super(context)
+    constructor(context: Context?) : this(context, null)
 
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
         val backgroundColor = ResourcesCompat.getColor(resources, R.color.opaque_yellow, null)
