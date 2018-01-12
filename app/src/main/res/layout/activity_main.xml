@@ -213,6 +213,18 @@
             android:text="@string/canvas_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/customViewButton" />
+
+        <Button
+            android:id="@+id/drawButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchDrawCanvasActivity"
+            android:text="@string/draw_canvas"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/canvasButton" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
