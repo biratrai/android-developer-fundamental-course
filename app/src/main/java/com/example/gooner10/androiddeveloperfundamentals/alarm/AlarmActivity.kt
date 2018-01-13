@@ -28,20 +28,20 @@ class AlarmActivity : AppCompatActivity() {
 
     fun startAlarmManager(view: View) {
         val intent = Intent(this, AlarmReceiver::class.java)
-        intent.setAction(ACTION_USER_ALARM)
+        intent.action = ACTION_USER_ALARM
         intent.putExtra(ALARM_DATA, "From AlarmActivity")
 
         val pendingIntent: PendingIntent = PendingIntent.getBroadcast(this, ALARM_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        var alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        var currentTimeInMilliSeconds = SystemClock.elapsedRealtime()
-        var ONE_HOUR = 6 * 1000L
+        val currentTimeInMilliSeconds = SystemClock.elapsedRealtime()
+        val SECONDS = 6 * 1000L
         Log.d(TAG, "currentTimeInMilliSeconds: " + currentTimeInMilliSeconds)
-        var alarmTime = currentTimeInMilliSeconds + ONE_HOUR
+        var alarmTime = currentTimeInMilliSeconds + SECONDS
         alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,
-                ONE_HOUR,
-                6 * 1000
+                alarmTime,
+                SECONDS
                 , pendingIntent)
     }
 }
