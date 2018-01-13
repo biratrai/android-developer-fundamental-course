@@ -10,12 +10,13 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
+import java.util.*
 
 class AlarmActivity : AppCompatActivity() {
     private val ALARM_REQUEST_CODE = 2017
     private val TAG = AlarmActivity::class.java.simpleName
-    private val alarmManager: AlarmManager? = null
-    private val pendingIntent: PendingIntent = PendingIntent.getBroadcast(this, ALARM_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    private var alarmManager: AlarmManager? = null
+    private var pendingIntent: PendingIntent? = null
 
     companion object {
         const val ALARM_DATA = "data"
@@ -33,13 +34,20 @@ class AlarmActivity : AppCompatActivity() {
         intent.action = ACTION_USER_ALARM
         intent.putExtra(ALARM_DATA, "From AlarmActivity")
 
-        val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+//        val calendar = Calendar.getInstance()
+//        calendar.timeInMillis = System.currentTimeMillis()
+//        calendar.set(Calendar.HOUR_OF_DAY, 8)
+//        calendar.set(Calendar.MINUTE, 30)
+
+        pendingIntent = PendingIntent.getBroadcast(this, ALARM_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         val currentTimeInMilliSeconds = SystemClock.elapsedRealtime()
         val SECONDS = 6 * 1000L
         Log.d(TAG, "currentTimeInMilliSeconds: " + currentTimeInMilliSeconds)
         val alarmTime = currentTimeInMilliSeconds + SECONDS
-        alarmManager.setRepeating(AlarmManager.RTC,
+        alarmManager!!.setRepeating(AlarmManager.RTC,
                 alarmTime,
                 SECONDS
                 , pendingIntent)
