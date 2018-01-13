@@ -14,6 +14,8 @@ import com.example.gooner10.androiddeveloperfundamentals.R
 class AlarmActivity : AppCompatActivity() {
     private val ALARM_REQUEST_CODE = 2017
     private val TAG = AlarmActivity::class.java.simpleName
+    private val alarmManager: AlarmManager? = null
+    private val pendingIntent: PendingIntent = PendingIntent.getBroadcast(this, ALARM_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
     companion object {
         const val ALARM_DATA = "data"
@@ -31,17 +33,19 @@ class AlarmActivity : AppCompatActivity() {
         intent.action = ACTION_USER_ALARM
         intent.putExtra(ALARM_DATA, "From AlarmActivity")
 
-        val pendingIntent: PendingIntent = PendingIntent.getBroadcast(this, ALARM_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-
         val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         val currentTimeInMilliSeconds = SystemClock.elapsedRealtime()
         val SECONDS = 6 * 1000L
         Log.d(TAG, "currentTimeInMilliSeconds: " + currentTimeInMilliSeconds)
-        var alarmTime = currentTimeInMilliSeconds + SECONDS
-        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,
+        val alarmTime = currentTimeInMilliSeconds + SECONDS
+        alarmManager.setRepeating(AlarmManager.RTC,
                 alarmTime,
                 SECONDS
                 , pendingIntent)
+    }
+
+    fun cancelAlarm(view: View) {
+        alarmManager?.cancel(pendingIntent)
     }
 }
