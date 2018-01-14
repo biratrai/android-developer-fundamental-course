@@ -80,7 +80,8 @@
         <activity android:name=".places.PlacesActivity" />
         <activity android:name=".customview.CustomActivity" />
         <activity android:name=".canvas.CanvasActivity" />
-        <activity android:name=".canvas.CustomCanvasActivity"></activity>
+        <activity android:name=".canvas.CustomCanvasActivity" />
+        <activity android:name=".clippedView.ClippedActivity"></activity>
     </application>
 
 </manifest>

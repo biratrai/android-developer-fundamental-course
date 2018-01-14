@@ -76,18 +76,21 @@ class DrawCanvasView : View {
     }
 
     private fun touchUp() {
+        Log.d(TAG, "x: " + x + " y: " + y)
         path.lineTo(this.x!!, this.y!!)
         canvas!!.drawPath(path, paint)
         path.reset()
     }
 
     private fun touchMove(x: Float, y: Float) {
+        Log.d(TAG, "x: " + x + " y: " + y)
         if ((Math.abs(x - this.x!!) >= TOUCH_TOLERANCE) || (Math.abs(y - this.y!!) >= TOUCH_TOLERANCE)) {
             path.quadTo(this.x!!, this.y!!, (this.x!! + x) / 2, (this.y!! + y) / 2)
         }
     }
 
     private fun touchStart(x: Float, y: Float) {
+        Log.d(TAG, "x: " + x + " y: " + y)
         path.moveTo(x, y)
         this.x = x
         this.y = y
