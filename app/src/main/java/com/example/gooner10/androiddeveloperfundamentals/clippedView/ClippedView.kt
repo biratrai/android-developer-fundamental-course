@@ -1,9 +1,7 @@
 package com.example.gooner10.androiddeveloperfundamentals.clippedView
 
 import android.content.Context
-import android.graphics.Paint
-import android.graphics.Path
-import android.graphics.RectF
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
@@ -34,6 +32,7 @@ class ClippedView : View {
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
+        isFocusable = true
         paint.isAntiAlias = true
         paint.strokeWidth = resources.getDimension(R.dimen.strokeWidth)
         paint.textSize = resources.getDimension(R.dimen.textSize)
@@ -42,4 +41,12 @@ class ClippedView : View {
 
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
+
+    fun drawClippedRectangle(canvas: Canvas) {
+        canvas.clipRect(clipRectLeft, clipRectTop, clipRectRight, clipRectBottom)
+        canvas.drawColor(Color.WHITE)
+        paint.color = Color.RED
+        canvas.drawLine(clipRectLeft, clipRectTop, clipRectRight, clipRectBottom, paint)
+
+    }
 }
