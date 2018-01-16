@@ -48,5 +48,11 @@ class ClippedView : View {
         paint.color = Color.RED
         canvas.drawLine(clipRectLeft, clipRectTop, clipRectRight, clipRectBottom, paint)
 
+        paint.color = Color.GREEN
+        canvas.drawCircle(circleRadius, clipRectBottom - circleRadius, circleRadius, paint)
+
+        paint.color = Color.BLUE
+        paint.textAlign = Paint.Align.RIGHT
+        canvas.drawText(context.getString(R.string.clipping), clipRectRight, textOffset, paint)
     }
 }
