@@ -30,7 +30,8 @@ class ClippedView : View {
     private val textRow = rowFour + (1.5 * clipRectBottom)
     private var rectF: RectF? = null
 
-    constructor(context: Context?) : super(context)
+    constructor(context: Context?) : this(context, null)
+
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
         isFocusable = true
         paint.isAntiAlias = true
@@ -45,6 +46,10 @@ class ClippedView : View {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawColor(Color.GRAY)
+        canvas.save()
+        canvas.translate(columnOne, rowOne)
+        drawClippedRectangle(canvas)
+        canvas.restore()
         canvas.save()
     }
 
