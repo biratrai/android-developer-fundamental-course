@@ -225,6 +225,18 @@
             android:text="@string/draw_canvas"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/canvasButton" />
+
+        <Button
+            android:id="@+id/clippedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchClippedActivity"
+            android:text="@string/clippped_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/drawButton" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

@@ -42,6 +42,12 @@ class ClippedView : View {
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
 
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        canvas.drawColor(Color.GRAY)
+        canvas.save()
+    }
+
     fun drawClippedRectangle(canvas: Canvas) {
         canvas.clipRect(clipRectLeft, clipRectTop, clipRectRight, clipRectBottom)
         canvas.drawColor(Color.WHITE)

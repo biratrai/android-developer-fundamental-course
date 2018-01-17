@@ -9,6 +9,7 @@ import com.example.gooner10.androiddeveloperfundamentals.anko.AnkoActivity
 import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoaderActivity
 import com.example.gooner10.androiddeveloperfundamentals.canvas.CanvasActivity
 import com.example.gooner10.androiddeveloperfundamentals.canvas.CustomCanvasActivity
+import com.example.gooner10.androiddeveloperfundamentals.clippedView.ClippedActivity
 import com.example.gooner10.androiddeveloperfundamentals.contentProvider.ContentProviderActivity
 import com.example.gooner10.androiddeveloperfundamentals.customview.CustomActivity
 import com.example.gooner10.androiddeveloperfundamentals.database.DatabaseActivity
@@ -91,5 +92,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchDrawCanvasActivity(view: View) {
         startActivity(intentFor<CustomCanvasActivity>())
+    }
+
+    fun launchClippedActivity(view: View) {
+        startActivity(intentFor<ClippedActivity>())
     }
 }
