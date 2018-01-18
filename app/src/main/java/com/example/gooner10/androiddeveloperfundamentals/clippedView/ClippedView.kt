@@ -50,7 +50,21 @@ class ClippedView : View {
         canvas.translate(columnOne, rowOne)
         drawClippedRectangle(canvas)
         canvas.restore()
+
         canvas.save()
+        canvas.translate(columnTwo, rowOne)
+        canvas.clipRect(2 * rectInsect, 2 * rectInsect, clipRectRight - 2 * rectInsect, clipRectBottom - 2 * rectInsect)
+        canvas.clipRect(4 * rectInsect, 4 * rectInsect, clipRectRight - 4 * rectInsect, clipRectBottom - 4 * rectInsect, Region.Op.DIFFERENCE)
+        drawClippedRectangle(canvas)
+        canvas.restore()
+
+        canvas.save()
+        canvas.translate(columnOne, rowTwo)
+        path.rewind()
+        path.addCircle(circleRadius, clipRectBottom - circleRadius, circleRadius, Path.Direction.CCW)
+        canvas.clipPath(path, Region.Op.DIFFERENCE)
+        drawClippedRectangle(canvas)
+        canvas.restore()
     }
 
     fun drawClippedRectangle(canvas: Canvas) {
