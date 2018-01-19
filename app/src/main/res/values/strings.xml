@@ -97,4 +97,5 @@ This volume starts with the first new Beatle song, “Free as a Bird” (based o
     <string name="cancel_alarm">Cancel Alarm</string>
     <string name="clipping">Clipping</string>
     <string name="clippped_activity">Clippped Activity</string>
+    <string name="skewed">This is the text</string>
 </resources>

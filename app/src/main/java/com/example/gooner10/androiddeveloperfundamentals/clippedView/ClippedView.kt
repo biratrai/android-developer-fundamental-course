@@ -27,7 +27,7 @@ class ClippedView : View {
     private val rowTwo = rowOne + rectInsect + clipRectBottom
     private val rowThree = rowTwo + rectInsect + clipRectBottom
     private val rowFour = rowThree + rectInsect + clipRectBottom
-    private val textRow = rowFour + (1.5 * clipRectBottom)
+    private val textRow = rowFour + (1.5f * clipRectBottom)
     private var rectF: RectF? = null
 
     constructor(context: Context?) : this(context, null)
@@ -94,6 +94,14 @@ class ClippedView : View {
                 clipRectRight / 4, Path.Direction.CCW)
         canvas.clipPath(path)
         drawClippedRectangle(canvas)
+        canvas.restore()
+
+        canvas.save()
+        paint.textSize = textSize
+        paint.textAlign = Paint.Align.RIGHT
+        canvas.translate(columnTwo, textRow)
+        canvas.skew(0.2f, 0.3f)
+        canvas.drawText(context.getString(R.string.skewed), 0f, 0f, paint)
         canvas.restore()
     }
 
