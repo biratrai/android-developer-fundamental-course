@@ -67,6 +67,13 @@ class ClippedView : View {
         canvas.restore()
 
         canvas.save()
+        canvas.translate(columnTwo, rowTwo)
+        canvas.clipRect(clipRectLeft, clipRectTop, clipRectRight - smallRectOffSet, clipRectBottom - smallRectOffSet)
+        canvas.clipRect(clipRectLeft + smallRectOffSet, clipRectTop + smallRectOffSet, clipRectRight, clipRectBottom, Region.Op.INTERSECT)
+        drawClippedRectangle(canvas)
+        canvas.restore()
+
+        canvas.save()
         canvas.translate(columnOne, rowThree)
         path.rewind()
         path.addCircle(clipRectLeft + rectInsect + circleRadius,
