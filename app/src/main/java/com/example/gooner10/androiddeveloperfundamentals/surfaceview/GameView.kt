@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.util.Log
+import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import com.example.gooner10.androiddeveloperfundamentals.R
@@ -56,6 +57,57 @@ class GameView : SurfaceView, Runnable {
     }
 
     override fun run() {
+        while (running) {
+            if (surfaceHolder.surface.isValid) {
+                val x = flashLightCone.x
+                val y = flashLightCone.y
+                val radius = flashLightCone.radius
+                val canvas = surfaceHolder.lockCanvas()
+                canvas.save()
+                canvas.drawColor(Color.WHITE)
+                canvas.drawBitmap(bitmap, bitmapX!!.toFloat(), bitmapY!!.toFloat(), paint)
+                path.addCircle(x!!.toFloat(), y!!.toFloat(), radius!!.toFloat(), Path.Direction.CCW)
+                canvas.clipPath(path, Region.Op.DIFFERENCE)
+                canvas.drawColor(Color.BLUE)
+                if (x > winnerRect.left && x < winnerRect.right
+                        && y > winnerRect.top && y < winnerRect.bottom) {
+                    canvas.drawColor(Color.WHITE)
+                    canvas.drawBitmap(bitmap, bitmapX!!.toFloat(), bitmapY!!.toFloat(), paint)
+                    canvas.drawText(
+                            "WIN!", (viewWidth!! / 3).toFloat(), (viewHeight!! / 2).toFloat(), paint)
+                }
+                path.rewind()
+                canvas.restore()
+                surfaceHolder.unlockCanvasAndPost(canvas)
+            }
+        }
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        val x = event.x
+        val y = event.y
+
+        // Invalidate() is inside the case statements because there are
+        // many other motion events, and we don't want to invalidate
+        // the view for those.
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                setUpBitmap()
+                // Set coordinates of flashlight cone.
+                updateFrame(x.toInt(), y.toInt())
+                invalidate()
+            }
+            MotionEvent.ACTION_MOVE -> {
+                // Updated coordinates for flashlight cone.
+                updateFrame(x.toInt(), y.toInt())
+                invalidate()
+            }
+        }// Do nothing.
+        return true
+    }
+
+    private fun updateFrame(newX: Int, newY: Int) {
+        flashLightCone.update(newX, newY)
     }
 
     fun pause() {

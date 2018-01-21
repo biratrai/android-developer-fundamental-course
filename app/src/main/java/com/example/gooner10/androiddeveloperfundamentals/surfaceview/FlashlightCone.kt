@@ -4,9 +4,9 @@ package com.example.gooner10.androiddeveloperfundamentals.surfaceview
  * Custom SurfaceView class
  */
 class FlashlightCone {
-    private var x: Int? = null
-    private var y: Int? = null
-    private var radius: Int? = null
+    internal var x: Int? = null
+    internal var y: Int? = null
+    internal var radius: Int? = null
 
     constructor(viewWidth: Int, viewHeight: Int) {
         x = viewWidth
