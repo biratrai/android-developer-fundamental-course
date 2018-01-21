@@ -237,6 +237,18 @@
             android:text="@string/clippped_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/drawButton" />
+
+        <Button
+            android:id="@+id/surfaceviewButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchSurfaceViewActivity"
+            android:text="@string/clippped_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/clippedButton" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

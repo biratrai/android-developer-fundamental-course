@@ -20,6 +20,7 @@ import com.example.gooner10.androiddeveloperfundamentals.phone.PhoneActivity
 import com.example.gooner10.androiddeveloperfundamentals.recyclerview.RecyclerViewActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
 import com.example.gooner10.androiddeveloperfundamentals.sensor.SensorActivity
+import com.example.gooner10.androiddeveloperfundamentals.surfaceview.SurfaceActivity
 import com.example.gooner10.androiddeveloperfundamentals.toast.ToastActivity
 import org.jetbrains.anko.intentFor
 
@@ -96,5 +97,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchClippedActivity(view: View) {
         startActivity(intentFor<ClippedActivity>())
+    }
+
+    fun launchSurfaceViewActivity(view: View) {
+        startActivity(intentFor<SurfaceActivity>())
     }
 }
