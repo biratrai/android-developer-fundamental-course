@@ -82,7 +82,8 @@
         <activity android:name=".canvas.CanvasActivity" />
         <activity android:name=".canvas.CustomCanvasActivity" />
         <activity android:name=".clippedView.ClippedActivity" />
-        <activity android:name=".surfaceview.SurfaceActivity"></activity>
+        <activity android:name=".surfaceview.SurfaceActivity" />
+        <activity android:name=".animations.AnimationActivity"></activity>
     </application>
 
 </manifest>
