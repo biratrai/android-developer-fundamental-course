@@ -1,5 +1,6 @@
 package com.example.gooner10.androiddeveloperfundamentals.animations
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Paint
@@ -16,6 +17,8 @@ class PulseAnimationView : View {
     private val COLOR_ADJUSTER = 5
     private var mX: Float? = null
     private var mY: Float? = null
+    private val ANIMATION_DURATION = 4000
+    private val ANIMATION_DELAY = 1000
 
     constructor(context: Context?) : super(context)
 
@@ -33,5 +36,11 @@ class PulseAnimationView : View {
             this.mY = event.y
         }
         return super.onTouchEvent(event)
+    }
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        val growAnimator: ObjectAnimator = ObjectAnimator.ofFloat(this, "radius", 0F, width.toFloat())
+        growAnimator.duration = ANIMATION_DURATION.toLong()
     }
 }
