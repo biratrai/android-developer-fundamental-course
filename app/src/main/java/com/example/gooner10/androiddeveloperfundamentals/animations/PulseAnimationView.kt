@@ -1,12 +1,17 @@
 package com.example.gooner10.androiddeveloperfundamentals.animations
 
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.content.Context
+import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.view.animation.LinearInterpolator
 
 /**
  * Custom animation view
@@ -19,6 +24,7 @@ class PulseAnimationView : View {
     private var mY: Float? = null
     private val ANIMATION_DURATION = 4000
     private val ANIMATION_DELAY = 1000
+    private val pulseAnimatorSet: AnimatorSet = AnimatorSet()
 
     constructor(context: Context?) : super(context)
 
@@ -35,6 +41,11 @@ class PulseAnimationView : View {
             this.mX = event.x
             this.mY = event.y
         }
+
+        if (pulseAnimatorSet.isRunning) {
+            pulseAnimatorSet.cancel()
+        }
+        pulseAnimatorSet.start()
         return super.onTouchEvent(event)
     }
 
@@ -42,5 +53,27 @@ class PulseAnimationView : View {
         super.onSizeChanged(w, h, oldw, oldh)
         val growAnimator: ObjectAnimator = ObjectAnimator.ofFloat(this, "radius", 0F, width.toFloat())
         growAnimator.duration = ANIMATION_DURATION.toLong()
+        growAnimator.interpolator = LinearInterpolator()
+
+        val shrinkAnimator: ObjectAnimator = ObjectAnimator.ofFloat(this, "radius", width.toFloat(), 0F)
+        shrinkAnimator.duration = ANIMATION_DURATION.toLong()
+        shrinkAnimator.interpolator = LinearOutSlowInInterpolator()
+        shrinkAnimator.startDelay = ANIMATION_DELAY.toLong()
+
+        val repeatAnimator: ObjectAnimator = ObjectAnimator.ofFloat(this, "radius", 0F, width.toFloat())
+        repeatAnimator.startDelay = ANIMATION_DELAY.toLong()
+        repeatAnimator.duration = ANIMATION_DURATION.toLong()
+        repeatAnimator.repeatCount = 1
+        repeatAnimator.repeatMode = ValueAnimator.REVERSE
+
+        pulseAnimatorSet.play(growAnimator).before(shrinkAnimator)
+        pulseAnimatorSet.play(repeatAnimator).after(shrinkAnimator)
     }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        canvas.drawCircle(mX!!, mY!!, radius!!, paint)
+    }
+
+
 }
