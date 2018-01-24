@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.alarm.AlarmActivity
+import com.example.gooner10.androiddeveloperfundamentals.animations.AnimationActivity
 import com.example.gooner10.androiddeveloperfundamentals.anko.AnkoActivity
 import com.example.gooner10.androiddeveloperfundamentals.backgroundTask.AsyncLoaderActivity
 import com.example.gooner10.androiddeveloperfundamentals.canvas.CanvasActivity
@@ -101,5 +102,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchSurfaceViewActivity(view: View) {
         startActivity(intentFor<SurfaceActivity>())
+    }
+
+    fun launchAnimationActivity(view: View) {
+        startActivity(intentFor<AnimationActivity>())
     }
 }

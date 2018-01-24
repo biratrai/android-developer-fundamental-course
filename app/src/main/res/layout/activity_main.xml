@@ -249,6 +249,18 @@
             android:text="@string/surfaceview_activity"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/clippedButton" />
+
+        <Button
+            android:id="@+id/animationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="launchAnimationActivity"
+            android:text="@string/animation_activity"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/surfaceviewButton" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
