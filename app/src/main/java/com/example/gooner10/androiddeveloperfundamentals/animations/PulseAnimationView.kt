@@ -9,6 +9,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.LinearInterpolator
@@ -17,11 +18,11 @@ import android.view.animation.LinearInterpolator
  * Custom animation view
  */
 class PulseAnimationView : View {
-    private var radius: Float? = null
+    private var radius: Float = 0.0F
     private val paint: Paint = Paint()
     private val COLOR_ADJUSTER = 5
-    private var mX: Float? = null
-    private var mY: Float? = null
+    private var mX: Float = 0.0F
+    private var mY: Float = 0.0F
     private val ANIMATION_DURATION = 4000
     private val ANIMATION_DELAY = 1000
     private val pulseAnimatorSet: AnimatorSet = AnimatorSet()
@@ -72,6 +73,7 @@ class PulseAnimationView : View {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        Log.i("PulseAnimation: ", "radius: " + radius)
         canvas.drawCircle(mX!!, mY!!, radius!!, paint)
     }
 
