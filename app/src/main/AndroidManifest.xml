@@ -83,7 +83,8 @@
         <activity android:name=".canvas.CustomCanvasActivity" />
         <activity android:name=".clippedView.ClippedActivity" />
         <activity android:name=".surfaceview.SurfaceActivity" />
-        <activity android:name=".animations.AnimationActivity"></activity>
+        <activity android:name=".animations.AnimationActivity" />
+        <activity android:name=".physicsanimation.PhysicsAnimationActivity"></activity>
     </application>
 
 </manifest>
