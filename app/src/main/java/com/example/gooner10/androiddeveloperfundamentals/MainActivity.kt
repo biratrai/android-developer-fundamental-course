@@ -18,6 +18,7 @@ import com.example.gooner10.androiddeveloperfundamentals.geofeature.GeoActivity
 import com.example.gooner10.androiddeveloperfundamentals.jobScheduler.JobActivity
 import com.example.gooner10.androiddeveloperfundamentals.keyboard.KeyboardActivity
 import com.example.gooner10.androiddeveloperfundamentals.phone.PhoneActivity
+import com.example.gooner10.androiddeveloperfundamentals.physicsanimation.PhysicsAnimationActivity
 import com.example.gooner10.androiddeveloperfundamentals.recyclerview.RecyclerViewActivity
 import com.example.gooner10.androiddeveloperfundamentals.rxKotlin.RxActivity
 import com.example.gooner10.androiddeveloperfundamentals.sensor.SensorActivity
@@ -106,5 +107,9 @@ class MainActivity : AppCompatActivity() {
 
     fun launchAnimationActivity(view: View) {
         startActivity(intentFor<AnimationActivity>())
+    }
+
+    fun launchPhysicsAnimationActivity(view: View) {
+        startActivity(intentFor<PhysicsAnimationActivity>())
     }
 }
