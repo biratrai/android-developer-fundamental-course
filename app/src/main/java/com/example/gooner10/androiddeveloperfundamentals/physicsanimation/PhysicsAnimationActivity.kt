@@ -45,6 +45,11 @@ class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
         springAnimation.spring = springForce
         springAnimation.setStartVelocity(2000f)
         springAnimation.start()
+        springAnimation.addEndListener { animation, canceled, value, velocity ->
+            // Change icon after animation ends
+            androidImage.setImageResource(
+                    R.drawable.ic_android_black_24dp)
+        }
     }
 }
 
