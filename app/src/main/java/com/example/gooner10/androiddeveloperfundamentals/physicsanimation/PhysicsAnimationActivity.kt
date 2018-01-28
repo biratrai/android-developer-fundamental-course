@@ -25,18 +25,21 @@ class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
 
     override fun onTouch(v: View?, event: MotionEvent): Boolean {
         Log.d("TAG", "onTouch Clicked")
-        val flingAnimation = FlingAnimation(animationText, DynamicAnimation.X)
-        flingAnimation.setStartVelocity(500f)
-        flingAnimation.friction = 0.5f
-        flingAnimation.start()
-        springAnimation()
+
         return super.onTouchEvent(event)
     }
 
-    private fun springAnimation() {
-        val springAnimation = SpringAnimation(animationText, DynamicAnimation.X)
+    fun flingMe(view: View) {
+        val flingAnimation = FlingAnimation(androidImage, DynamicAnimation.X)
+        flingAnimation.setStartVelocity(500f)
+        flingAnimation.friction = 0.5f
+        flingAnimation.start()
+    }
+
+    fun springMe(view: View) {
+        val springAnimation = SpringAnimation(androidImage, DynamicAnimation.X)
         val springForce = SpringForce()
-        springForce.finalPosition = animationText.x
+        springForce.finalPosition = androidImage.x
         springForce.dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
         springForce.stiffness = SpringForce.STIFFNESS_LOW
         springAnimation.spring = springForce
