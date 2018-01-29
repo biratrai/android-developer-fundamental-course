@@ -51,5 +51,9 @@ class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
                     R.drawable.ic_android_black_24dp)
         }
     }
+
+    fun floatAndStretch(view: View){
+
+    }
 }
 
