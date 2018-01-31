@@ -12,26 +12,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:onClick="flingMe"
-        android:text="Fling"
+        android:text="@string/fling"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.135" />
 
     <Button
-        android:id="@+id/sprintButton"
+        android:id="@+id/springButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:onClick="springMe"
-        android:text="Spring"
+        android:text="@string/spring"
         app:layout_constraintStart_toEndOf="@+id/fingButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <Button
+        android:id="@+id/stretchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:onClick="springMe"
+        android:text="@string/stretch"
+        app:layout_constraintStart_toEndOf="@+id/springButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.135" />
 
