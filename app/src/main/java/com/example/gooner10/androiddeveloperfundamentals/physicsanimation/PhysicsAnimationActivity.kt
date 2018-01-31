@@ -1,21 +1,14 @@
 package com.example.gooner10.androiddeveloperfundamentals.physicsanimation
 
 import android.os.Bundle
-import android.support.animation.DynamicAnimation
-import android.support.animation.FlingAnimation
-import android.support.animation.SpringAnimation
-import android.support.animation.SpringForce
+import android.support.animation.*
 import android.support.v7.app.AppCompatActivity
-import android.util.FloatProperty
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
 import kotlinx.android.synthetic.main.activity_physics_animation.*
 import org.jetbrains.anko.contentView
-import android.support.animation.FloatPropertyCompat
-
-
 
 
 class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
@@ -56,7 +49,7 @@ class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
         }
     }
 
-    fun floatAndStretch(view: View){
+    fun floatAndStretch(view: View) {
         val scale = object : FloatPropertyCompat<View>("scale") {
             override fun getValue(view: View): Float {
                 // return the value of any one property
@@ -65,10 +58,25 @@ class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
 
             override fun setValue(view: View, value: Float) {
                 // Apply the same value to two properties
-                view.scaleX = value
-                view.scaleY = value
+                view.scaleX = value/2
+                view.scaleY = value/2
             }
         }
+
+        val springAnimation = SpringAnimation(androidImage, scale)
+        val springForce = SpringForce()
+        springForce.finalPosition = androidImage.x
+        springForce.dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
+        springForce.stiffness = SpringForce.STIFFNESS_LOW
+        springAnimation.spring = springForce
+        springAnimation.setStartVelocity(2000f)
+        springAnimation.minimumVisibleChange = DynamicAnimation.MIN_VISIBLE_CHANGE_SCALE
+        springAnimation.start()
+//        springAnimation.addEndListener { animation, canceled, value, velocity ->
+//            // Change icon after animation ends
+//            androidImage.setImageResource(
+//                    R.drawable.ic_android_black_24dp)
+//        }
     }
 }
 
