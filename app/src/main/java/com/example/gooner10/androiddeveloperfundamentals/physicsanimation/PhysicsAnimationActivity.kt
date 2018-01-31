@@ -6,12 +6,16 @@ import android.support.animation.FlingAnimation
 import android.support.animation.SpringAnimation
 import android.support.animation.SpringForce
 import android.support.v7.app.AppCompatActivity
+import android.util.FloatProperty
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import com.example.gooner10.androiddeveloperfundamentals.R
 import kotlinx.android.synthetic.main.activity_physics_animation.*
 import org.jetbrains.anko.contentView
+import android.support.animation.FloatPropertyCompat
+
+
 
 
 class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
@@ -53,7 +57,18 @@ class PhysicsAnimationActivity : AppCompatActivity(), View.OnTouchListener {
     }
 
     fun floatAndStretch(view: View){
+        val scale = object : FloatPropertyCompat<View>("scale") {
+            override fun getValue(view: View): Float {
+                // return the value of any one property
+                return view.scaleX
+            }
 
+            override fun setValue(view: View, value: Float) {
+                // Apply the same value to two properties
+                view.scaleX = value
+                view.scaleY = value
+            }
+        }
     }
 }
 
