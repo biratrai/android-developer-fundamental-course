@@ -73,7 +73,7 @@ class GeoActivity : AppCompatActivity() {
         return userLocation
     }
 
-    fun setAddress(location: Location) {
+    private fun setAddress(location: Location) {
         val geocoder = Geocoder(this, Locale.getDefault())
         val addressList: List<Address>
         addressList = geocoder.getFromLocation(location.latitude, location.longitude, 1)
